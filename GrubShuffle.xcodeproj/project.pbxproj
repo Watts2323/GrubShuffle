@@ -7,12 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		099A46C5172BEF9F33B9824A /* Pods_GrubShuffle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4420EBD88E7A28B9BB971D0F /* Pods_GrubShuffle.framework */; };
 		1900D42421C852C6002A453A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D42321C852C6002A453A /* AppDelegate.swift */; };
 		1900D42921C852C6002A453A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1900D42721C852C6002A453A /* Main.storyboard */; };
 		1900D42C21C852C6002A453A /* GrubShuffle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1900D42A21C852C6002A453A /* GrubShuffle.xcdatamodeld */; };
 		1900D42E21C852CA002A453A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1900D42D21C852CA002A453A /* Assets.xcassets */; };
 		1900D43121C852CA002A453A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1900D42F21C852CA002A453A /* LaunchScreen.storyboard */; };
-		1900D43921C8621E002A453A /* OnBoardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D43821C8621E002A453A /* OnBoardingPageViewController.swift */; };
+		1900D43C21C8A740002A453A /* plate.json in Resources */ = {isa = PBXBuildFile; fileRef = 1900D43A21C8A73F002A453A /* plate.json */; };
+		1900D43D21C8A740002A453A /* loader_4.json in Resources */ = {isa = PBXBuildFile; fileRef = 1900D43B21C8A740002A453A /* loader_4.json */; };
+		1900D43F21C8A8D9002A453A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D43E21C8A8D9002A453A /* MainViewController.swift */; };
+		1900D44621C969C4002A453A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D44521C969C4002A453A /* CoreDataStack.swift */; };
+		1900D44821C973EB002A453A /* Grub+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D44721C973EB002A453A /* Grub+Convenience.swift */; };
+		1900D44A21C9BE9C002A453A /* SearchCriteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D44921C9BE9C002A453A /* SearchCriteriaViewController.swift */; };
+		196AD4BC21D7E4DD0006F699 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4BA21D7E4DD0006F699 /* loading.json */; };
+		196AD4BD21D7E4DD0006F699 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4BB21D7E4DD0006F699 /* search.json */; };
+		196AD4BF21D7E6BD0006F699 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4BE21D7E6BD0006F699 /* LoadingScreenViewController.swift */; };
+		196AD4C121D7F3500006F699 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4C021D7F3500006F699 /* data.json */; };
+		196AD4C521D9CCEB0006F699 /* building_evolution_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4C221D9CCEA0006F699 /* building_evolution_animation.json */; };
+		196AD4C621D9CCEB0006F699 /* clap.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4C321D9CCEA0006F699 /* clap.json */; };
+		196AD4C721D9CCEB0006F699 /* loading_morphing.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4C421D9CCEA0006F699 /* loading_morphing.json */; };
+		196AD4CC21D9CD700006F699 /* noodles.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4CA21D9CD6F0006F699 /* noodles.json */; };
+		196AD4D221D9D7280006F699 /* WelcomeOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4D121D9D7280006F699 /* WelcomeOnboardingViewController.swift */; };
+		196AD4D421D9D73F0006F699 /* LocationOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4D321D9D73F0006F699 /* LocationOnboardingViewController.swift */; };
+		196AD4D621D9D76A0006F699 /* ChoosePlaceOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4D521D9D76A0006F699 /* ChoosePlaceOnboardingViewController.swift */; };
+		196AD4D821D9D77C0006F699 /* ShuffleOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4D721D9D77C0006F699 /* ShuffleOnboardingViewController.swift */; };
+		196AD4DA21D9D79E0006F699 /* LastOnboadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4D921D9D79E0006F699 /* LastOnboadingViewController.swift */; };
+		196AD4DC21D9F9070006F699 /* fireworks.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4DB21D9F9070006F699 /* fireworks.json */; };
+		196AD4E021DA83200006F699 /* Ping Pong.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4DF21DA83200006F699 /* Ping Pong.json */; };
+		196AD4E221DABD6B0006F699 /* YelpObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4E121DABD6B0006F699 /* YelpObjects.swift */; };
+		196AD4E421DAE6460006F699 /* YelpObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4E321DAE6460006F699 /* YelpObjectController.swift */; };
+		196AD4E621DBDDE70006F699 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4E521DBDDE70006F699 /* ResultsTableViewController.swift */; };
+		197967F621CAE6BA00E78CDB /* GrubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197967F521CAE6BA00E78CDB /* GrubController.swift */; };
+		197967FB21CC414400E78CDB /* extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197967FA21CC414400E78CDB /* extentsion.swift */; };
+		197967FF21CD62E600E78CDB /* GrubDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197967FE21CD62E600E78CDB /* GrubDetailViewController.swift */; };
+		1979680121CD65BD00E78CDB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979680021CD65BD00E78CDB /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +51,37 @@
 		1900D42D21C852CA002A453A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1900D43021C852CA002A453A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1900D43221C852CA002A453A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1900D43821C8621E002A453A /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
+		1900D43A21C8A73F002A453A /* plate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plate.json; sourceTree = "<group>"; };
+		1900D43B21C8A740002A453A /* loader_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader_4.json; sourceTree = "<group>"; };
+		1900D43E21C8A8D9002A453A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1900D44521C969C4002A453A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		1900D44721C973EB002A453A /* Grub+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grub+Convenience.swift"; sourceTree = "<group>"; };
+		1900D44921C9BE9C002A453A /* SearchCriteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCriteriaViewController.swift; sourceTree = "<group>"; };
+		196AD4BA21D7E4DD0006F699 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		196AD4BB21D7E4DD0006F699 /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
+		196AD4BE21D7E6BD0006F699 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
+		196AD4C021D7F3500006F699 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		196AD4C221D9CCEA0006F699 /* building_evolution_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = building_evolution_animation.json; sourceTree = "<group>"; };
+		196AD4C321D9CCEA0006F699 /* clap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clap.json; sourceTree = "<group>"; };
+		196AD4C421D9CCEA0006F699 /* loading_morphing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_morphing.json; sourceTree = "<group>"; };
+		196AD4CA21D9CD6F0006F699 /* noodles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noodles.json; sourceTree = "<group>"; };
+		196AD4D121D9D7280006F699 /* WelcomeOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOnboardingViewController.swift; sourceTree = "<group>"; };
+		196AD4D321D9D73F0006F699 /* LocationOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationOnboardingViewController.swift; sourceTree = "<group>"; };
+		196AD4D521D9D76A0006F699 /* ChoosePlaceOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceOnboardingViewController.swift; sourceTree = "<group>"; };
+		196AD4D721D9D77C0006F699 /* ShuffleOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleOnboardingViewController.swift; sourceTree = "<group>"; };
+		196AD4D921D9D79E0006F699 /* LastOnboadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOnboadingViewController.swift; sourceTree = "<group>"; };
+		196AD4DB21D9F9070006F699 /* fireworks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fireworks.json; sourceTree = "<group>"; };
+		196AD4DF21DA83200006F699 /* Ping Pong.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Ping Pong.json"; sourceTree = "<group>"; };
+		196AD4E121DABD6B0006F699 /* YelpObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpObjects.swift; sourceTree = "<group>"; };
+		196AD4E321DAE6460006F699 /* YelpObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpObjectController.swift; sourceTree = "<group>"; };
+		196AD4E521DBDDE70006F699 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		197967F521CAE6BA00E78CDB /* GrubController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrubController.swift; sourceTree = "<group>"; };
+		197967FA21CC414400E78CDB /* extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentsion.swift; sourceTree = "<group>"; };
+		197967FE21CD62E600E78CDB /* GrubDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrubDetailViewController.swift; sourceTree = "<group>"; };
+		1979680021CD65BD00E78CDB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4420EBD88E7A28B9BB971D0F /* Pods_GrubShuffle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrubShuffle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92B21C165A77F4CF1DF87FE6 /* Pods-GrubShuffle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrubShuffle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GrubShuffle/Pods-GrubShuffle.debug.xcconfig"; sourceTree = "<group>"; };
+		FDE522DFEF905E845CED18A9 /* Pods-GrubShuffle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrubShuffle.release.xcconfig"; path = "Pods/Target Support Files/Pods-GrubShuffle/Pods-GrubShuffle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				099A46C5172BEF9F33B9824A /* Pods_GrubShuffle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				1900D42221C852C6002A453A /* GrubShuffle */,
+				1900D44D21CABA6A002A453A /* Extras */,
+				1900D44121C9589B002A453A /* Resources */,
 				1900D42121C852C6002A453A /* Products */,
+				447EA1A4C272D83F9598BBDA /* Pods */,
+				3D01FC5331BF991CB0E28113 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +119,121 @@
 		1900D42221C852C6002A453A /* GrubShuffle */ = {
 			isa = PBXGroup;
 			children = (
-				1900D42321C852C6002A453A /* AppDelegate.swift */,
-				1900D42721C852C6002A453A /* Main.storyboard */,
-				1900D43821C8621E002A453A /* OnBoardingPageViewController.swift */,
-				1900D42D21C852CA002A453A /* Assets.xcassets */,
-				1900D42F21C852CA002A453A /* LaunchScreen.storyboard */,
-				1900D43221C852CA002A453A /* Info.plist */,
-				1900D42A21C852C6002A453A /* GrubShuffle.xcdatamodeld */,
+				1900D44221C958AA002A453A /* Storyboard */,
+				1900D44421C969AD002A453A /* Model+CoreData */,
+				197967F721CAE6C300E78CDB /* ModelController */,
+				1900D44321C958DD002A453A /* ViewControllers */,
 			);
 			path = GrubShuffle;
+			sourceTree = "<group>";
+		};
+		1900D44021C95881002A453A /* AnimationJson */ = {
+			isa = PBXGroup;
+			children = (
+				196AD4C021D7F3500006F699 /* data.json */,
+				1900D43B21C8A740002A453A /* loader_4.json */,
+				1900D43A21C8A73F002A453A /* plate.json */,
+				196AD4BA21D7E4DD0006F699 /* loading.json */,
+				196AD4BB21D7E4DD0006F699 /* search.json */,
+				196AD4C221D9CCEA0006F699 /* building_evolution_animation.json */,
+				196AD4C321D9CCEA0006F699 /* clap.json */,
+				196AD4C421D9CCEA0006F699 /* loading_morphing.json */,
+				196AD4CA21D9CD6F0006F699 /* noodles.json */,
+				196AD4DF21DA83200006F699 /* Ping Pong.json */,
+				196AD4DB21D9F9070006F699 /* fireworks.json */,
+			);
+			path = AnimationJson;
+			sourceTree = "<group>";
+		};
+		1900D44121C9589B002A453A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1900D42321C852C6002A453A /* AppDelegate.swift */,
+				1900D42D21C852CA002A453A /* Assets.xcassets */,
+				1900D43221C852CA002A453A /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1900D44221C958AA002A453A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				196AD4D021D9D69E0006F699 /* OnboardingControllers */,
+				1900D42F21C852CA002A453A /* LaunchScreen.storyboard */,
+				1900D42721C852C6002A453A /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1900D44321C958DD002A453A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1900D43E21C8A8D9002A453A /* MainViewController.swift */,
+				1900D44921C9BE9C002A453A /* SearchCriteriaViewController.swift */,
+				196AD4BE21D7E6BD0006F699 /* LoadingScreenViewController.swift */,
+				196AD4E521DBDDE70006F699 /* ResultsTableViewController.swift */,
+				197967FE21CD62E600E78CDB /* GrubDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1900D44421C969AD002A453A /* Model+CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1900D42A21C852C6002A453A /* GrubShuffle.xcdatamodeld */,
+				1900D44521C969C4002A453A /* CoreDataStack.swift */,
+				1900D44721C973EB002A453A /* Grub+Convenience.swift */,
+				196AD4E121DABD6B0006F699 /* YelpObjects.swift */,
+			);
+			path = "Model+CoreData";
+			sourceTree = "<group>";
+		};
+		1900D44D21CABA6A002A453A /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				1900D44021C95881002A453A /* AnimationJson */,
+				197967FA21CC414400E78CDB /* extentsion.swift */,
+				1979680021CD65BD00E78CDB /* LocationManager.swift */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
+		196AD4D021D9D69E0006F699 /* OnboardingControllers */ = {
+			isa = PBXGroup;
+			children = (
+				196AD4D121D9D7280006F699 /* WelcomeOnboardingViewController.swift */,
+				196AD4D321D9D73F0006F699 /* LocationOnboardingViewController.swift */,
+				196AD4D521D9D76A0006F699 /* ChoosePlaceOnboardingViewController.swift */,
+				196AD4D721D9D77C0006F699 /* ShuffleOnboardingViewController.swift */,
+				196AD4D921D9D79E0006F699 /* LastOnboadingViewController.swift */,
+			);
+			path = OnboardingControllers;
+			sourceTree = "<group>";
+		};
+		197967F721CAE6C300E78CDB /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				197967F521CAE6BA00E78CDB /* GrubController.swift */,
+				196AD4E321DAE6460006F699 /* YelpObjectController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		3D01FC5331BF991CB0E28113 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4420EBD88E7A28B9BB971D0F /* Pods_GrubShuffle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		447EA1A4C272D83F9598BBDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92B21C165A77F4CF1DF87FE6 /* Pods-GrubShuffle.debug.xcconfig */,
+				FDE522DFEF905E845CED18A9 /* Pods-GrubShuffle.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1900D43521C852CA002A453A /* Build configuration list for PBXNativeTarget "GrubShuffle" */;
 			buildPhases = (
+				A88A7B06710AE166F53ED310 /* [CP] Check Pods Manifest.lock */,
 				1900D41C21C852C6002A453A /* Sources */,
 				1900D41D21C852C6002A453A /* Frameworks */,
 				1900D41E21C852C6002A453A /* Resources */,
+				E0E2C3A2BED22B762B27A202 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,22 +296,96 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1900D43C21C8A740002A453A /* plate.json in Resources */,
+				196AD4CC21D9CD700006F699 /* noodles.json in Resources */,
+				196AD4DC21D9F9070006F699 /* fireworks.json in Resources */,
+				196AD4C621D9CCEB0006F699 /* clap.json in Resources */,
 				1900D43121C852CA002A453A /* LaunchScreen.storyboard in Resources */,
+				196AD4BD21D7E4DD0006F699 /* search.json in Resources */,
+				196AD4C521D9CCEB0006F699 /* building_evolution_animation.json in Resources */,
+				196AD4C121D7F3500006F699 /* data.json in Resources */,
+				196AD4BC21D7E4DD0006F699 /* loading.json in Resources */,
+				1900D43D21C8A740002A453A /* loader_4.json in Resources */,
+				196AD4E021DA83200006F699 /* Ping Pong.json in Resources */,
 				1900D42E21C852CA002A453A /* Assets.xcassets in Resources */,
 				1900D42921C852C6002A453A /* Main.storyboard in Resources */,
+				196AD4C721D9CCEB0006F699 /* loading_morphing.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A88A7B06710AE166F53ED310 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GrubShuffle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0E2C3A2BED22B762B27A202 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GrubShuffle/Pods-GrubShuffle-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrubShuffle/Pods-GrubShuffle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1900D41C21C852C6002A453A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				196AD4DA21D9D79E0006F699 /* LastOnboadingViewController.swift in Sources */,
+				1979680121CD65BD00E78CDB /* LocationManager.swift in Sources */,
+				197967FB21CC414400E78CDB /* extentsion.swift in Sources */,
+				1900D43F21C8A8D9002A453A /* MainViewController.swift in Sources */,
 				1900D42C21C852C6002A453A /* GrubShuffle.xcdatamodeld in Sources */,
-				1900D43921C8621E002A453A /* OnBoardingPageViewController.swift in Sources */,
+				1900D44821C973EB002A453A /* Grub+Convenience.swift in Sources */,
+				196AD4BF21D7E6BD0006F699 /* LoadingScreenViewController.swift in Sources */,
+				196AD4D621D9D76A0006F699 /* ChoosePlaceOnboardingViewController.swift in Sources */,
+				196AD4D821D9D77C0006F699 /* ShuffleOnboardingViewController.swift in Sources */,
 				1900D42421C852C6002A453A /* AppDelegate.swift in Sources */,
+				196AD4E621DBDDE70006F699 /* ResultsTableViewController.swift in Sources */,
+				197967FF21CD62E600E78CDB /* GrubDetailViewController.swift in Sources */,
+				1900D44621C969C4002A453A /* CoreDataStack.swift in Sources */,
+				196AD4E421DAE6460006F699 /* YelpObjectController.swift in Sources */,
+				1900D44A21C9BE9C002A453A /* SearchCriteriaViewController.swift in Sources */,
+				196AD4E221DABD6B0006F699 /* YelpObjects.swift in Sources */,
+				196AD4D221D9D7280006F699 /* WelcomeOnboardingViewController.swift in Sources */,
+				196AD4D421D9D73F0006F699 /* LocationOnboardingViewController.swift in Sources */,
+				197967F621CAE6BA00E78CDB /* GrubController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,11 +529,12 @@
 		};
 		1900D43621C852CA002A453A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92B21C165A77F4CF1DF87FE6 /* Pods-GrubShuffle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57CQ48CJGQ;
-				INFOPLIST_FILE = GrubShuffle/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,11 +548,12 @@
 		};
 		1900D43721C852CA002A453A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDE522DFEF905E845CED18A9 /* Pods-GrubShuffle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57CQ48CJGQ;
-				INFOPLIST_FILE = GrubShuffle/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

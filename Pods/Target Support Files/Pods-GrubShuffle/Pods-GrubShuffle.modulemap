@@ -1,0 +1,6 @@
+framework module Pods_GrubShuffle {
+  umbrella header "Pods-GrubShuffle-umbrella.h"
+
+  export *
+  module * { export * }
+}
