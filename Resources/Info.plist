@@ -42,6 +42,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Grub Shuffle needs you location to find Grub near you 🥩</string>
+	<string>Grub Shuffle needs your location to find Grub near you 🥩</string>
 </dict>
 </plist>

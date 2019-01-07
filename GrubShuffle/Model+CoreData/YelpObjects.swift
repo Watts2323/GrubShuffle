@@ -8,13 +8,22 @@
 
 import Foundation
 
-struct YelpObjects: Decodable {
-    var categories: Categories
+struct TopLevelJSON: Decodable {
+    var businesses: [YelpObjects]
+}
+
+struct YelpObjects: Decodable, Equatable {
+    static func == (lhs: YelpObjects, rhs: YelpObjects) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
+    var categories: [Categories]
     var imageURLAsString: String?
     var isFavorited: Bool?
     var name: String
     var phoneNumber: String
-    var rating: Int?
+    var rating: Double?
+    var location: Location
 //    var location: Location
 //    var imageURL: URL? {
 //        if let urlString = imageURLAsString {
@@ -31,14 +40,19 @@ struct YelpObjects: Decodable {
         case name
         case phoneNumber = "phone"
         case rating
+        case location
+    }
+    
+    var categoriesString: String  {
+        return categories.map { $0.title }.joined(separator: ", ")
     }
 }
 struct Categories: Decodable {
-    var titles: [Titles]
-}
-struct Titles: Decodable {
     var title: String
 }
+//struct Titles: Decodable {
+//    var title: String
+//}
 struct Coordinates: Decodable {
     var latitude: Double?
     var longitude: Double?
