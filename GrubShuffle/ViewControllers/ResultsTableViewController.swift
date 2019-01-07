@@ -11,18 +11,20 @@ import UIKit
 class ResultsTableViewController: UITableViewController {
     
     var yelpGrubObjects: [YelpObjects] = []
-    var currentLatitude: Double?
-    var currentLongitude: Double?
-    var price: String?
-    var searchText: String?
-    var radiusNumCounter: Int?
-    var address: [Location] = []
+//    var address: [Location] = []
     
-    let resultsArray: [YelpObjects] = []
+    var resultsArray: [YelpObjects] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+
+    @IBAction func NextButtonTapped(_ sender: Any) {
+        print("Next Button Tapped")
+    }
+    
 
     // MARK: - Table view data source
 
@@ -33,26 +35,35 @@ class ResultsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultsCell", for: indexPath)
         
-        let yelpGrubs = yelpGrubObjects[indexPath.row]
-        let addie = address[indexPath.row]
+        let yelpGrubs = YelpObjectController.shared.yelpObjects[indexPath.row]
+        let addie = yelpGrubs.location
         cell.textLabel?.text = yelpGrubs.name
-        cell.detailTextLabel?.text = "\(addie.displayAddress)"
+        cell.detailTextLabel?.text = "\(addie.displayAddress)".stripped
 
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+            
+            guard let index = resultsArray.index(of: YelpObjectController.shared.yelpObjects[indexPath.row]) else { return }
+            resultsArray.remove(at: index)
+        }else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+            resultsArray.append(YelpObjectController.shared.yelpObjects[indexPath.row])
+        }
     }
-    */
+
+//     MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromResultsToShuffle" {
+            guard let destinationVC = segue.destination as? ShuffleResultsViewController,
+                let selectedIndex = tableView.indexPathForSelectedRow else { return }
+            
+            let yelpGrub = YelpObjectController.shared.yelpObjects[selectedIndex.row]
+            destinationVC.yelpShuffle = [yelpGrub]
+        }
+    }
 
 }

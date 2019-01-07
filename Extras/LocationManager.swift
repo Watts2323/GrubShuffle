@@ -49,7 +49,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         // Handle Error
-        print("adsf")
+        print("Unable to retrieve a location value")
     }
 }
 
