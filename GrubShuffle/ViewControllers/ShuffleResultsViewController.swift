@@ -16,6 +16,9 @@ class ShuffleResultsViewController: UIViewController {
     
     
     var yelpShuffle: [YelpObjects] = []
+    
+    var pickerIndexes: [Int] = []
+    
     var selectedYelpObject: YelpObjects?
     
     override func viewDidLoad() {
@@ -25,27 +28,22 @@ class ShuffleResultsViewController: UIViewController {
         prepareShuffle()
         viewDetailsButton.isHidden = true
         viewDetailsButton.alpha = 0
-        
-        let index = shufflePickerView.selectedRow(inComponent: 0)
-        selectedYelpObject = yelpShuffle[index]
-    }
     
+        let index = shufflePickerView.selectedRow(inComponent: 0)
+        let yelpObject = yelpShuffle[index]
+        selectedYelpObject = yelpObject
+    }
+
     func prepareShuffle() {
-        var index = 0
-        for _ in 0...100 {
-            
-            if index == yelpShuffle.count {
-                index = 0
-            }
-            
-            yelpShuffle.append(yelpShuffle[index])
-            index += 1
+        for index in 0...100 {
+            let pickerIndex = index % yelpShuffle.count
+            pickerIndexes.append(pickerIndex)
         }
     }
     
-//    @IBAction func viewDetailsButtonTapped(_ sender: UIButton) {
-//    }
-//
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fromShuffleToDetailVC" {
             guard let destinationVC = segue.destination as? GrubDetailViewController else { return }
@@ -63,16 +61,17 @@ class ShuffleResultsViewController: UIViewController {
         }
         viewDetailsButton.isHidden = true
         
-
-        let pickRandom = Int(arc4random_uniform(89) + 10)
-        
-        shufflePickerView.selectRow(pickRandom, inComponent: 0, animated: true)
-        shufflePickerView.showsSelectionIndicator = true
-        
-        if pickRandom == 50 || pickRandom == 75 || pickRandom == 90 || pickRandom == 35 {
-            
-            
+        var shuffledSelection = selectedYelpObject
+        var randomIndex = Int.random(in: 0...100)
+        // While the selection matches previous selection, keep randomizing
+        while shuffledSelection == selectedYelpObject {
+            randomIndex = Int.random(in: 0...100)
+            shuffledSelection = yelpShuffle[pickerIndexes[randomIndex]]
         }
+
+        shufflePickerView.selectRow(randomIndex, inComponent: 0, animated: true)
+        shufflePickerView.showsSelectionIndicator = true
+        selectedYelpObject = shuffledSelection
         UIView.animate(withDuration: 20, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             //Increase button
 //            self.shuffleButton.bounds.size.width += 10
@@ -109,17 +108,17 @@ extension ShuffleResultsViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return yelpShuffle.count
+        return pickerIndexes.count
     }
 //
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let yelpObject = yelpShuffle[row]
+        let selectedIndex = pickerIndexes[row]
+        let yelpObject = yelpShuffle[selectedIndex]
         selectedYelpObject = yelpObject
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return yelpShuffle[row].name
+        let chosenIndex = pickerIndexes[row]
+        return yelpShuffle[chosenIndex].name
     }
-
-    
 }
