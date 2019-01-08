@@ -50,7 +50,7 @@ class MapkitViewController: UIViewController {
     func centerViewOnUsersLocation() {
         if let location = locationManger.location?.coordinate{
             let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-            guard let mapkitV = mapKitView else { return }
+//            guard let mapkitV = mapKitView else { return }
             mapKitView.setRegion(region, animated: true)
         }
     }
