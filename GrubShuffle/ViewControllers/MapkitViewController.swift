@@ -12,6 +12,12 @@ import MapKit
 
 class MapkitViewController: UIViewController {
     
+    var yelpMap: YelpObjects? {
+        didSet{
+            
+        }
+    }
+    
     //Variables:
     let locationManger = CLLocationManager()
     let regionInMeters: Double = 10000
@@ -21,6 +27,10 @@ class MapkitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
+//        navigationController?.navigationBar.barTintColor = UIColor.blue
+    }
+    @IBAction func backToSearchButtonTapped(_ sender: UIButton) {
+        
     }
     
     func setUpLocationManager(){
@@ -40,6 +50,7 @@ class MapkitViewController: UIViewController {
     func centerViewOnUsersLocation() {
         if let location = locationManger.location?.coordinate{
             let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            guard let mapkitV = mapKitView else { return }
             mapKitView.setRegion(region, animated: true)
         }
     }

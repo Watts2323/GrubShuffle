@@ -19,6 +19,7 @@
 		1900D44621C969C4002A453A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D44521C969C4002A453A /* CoreDataStack.swift */; };
 		1900D44821C973EB002A453A /* Grub+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D44721C973EB002A453A /* Grub+Convenience.swift */; };
 		1900D44A21C9BE9C002A453A /* SearchCriteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D44921C9BE9C002A453A /* SearchCriteriaViewController.swift */; };
+		191D494921E5375900098065 /* PhoneFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D494821E5375900098065 /* PhoneFormatter.swift */; };
 		1956F48F21E023770020EA02 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1956F48E21E023770020EA02 /* DesignableButton.swift */; };
 		1956F49321E275F70020EA02 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1956F49221E275F70020EA02 /* DesignableImageView.swift */; };
 		1956F49521E2FD080020EA02 /* ShuffleResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1956F49421E2FD080020EA02 /* ShuffleResultsViewController.swift */; };
@@ -61,6 +62,7 @@
 		1900D44521C969C4002A453A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1900D44721C973EB002A453A /* Grub+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grub+Convenience.swift"; sourceTree = "<group>"; };
 		1900D44921C9BE9C002A453A /* SearchCriteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCriteriaViewController.swift; sourceTree = "<group>"; };
+		191D494821E5375900098065 /* PhoneFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFormatter.swift; sourceTree = "<group>"; };
 		1956F48E21E023770020EA02 /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		1956F49221E275F70020EA02 /* DesignableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
 		1956F49421E2FD080020EA02 /* ShuffleResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleResultsViewController.swift; sourceTree = "<group>"; };
@@ -180,9 +182,9 @@
 				1900D44921C9BE9C002A453A /* SearchCriteriaViewController.swift */,
 				196AD4BE21D7E6BD0006F699 /* LoadingScreenViewController.swift */,
 				196AD4E521DBDDE70006F699 /* ResultsTableViewController.swift */,
+				1956F49421E2FD080020EA02 /* ShuffleResultsViewController.swift */,
 				197967FE21CD62E600E78CDB /* GrubDetailViewController.swift */,
 				19D41A0521DFFD5E0066FE19 /* MapkitViewController.swift */,
-				1956F49421E2FD080020EA02 /* ShuffleResultsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -203,6 +205,7 @@
 			children = (
 				1900D44021C95881002A453A /* AnimationJson */,
 				197967FA21CC414400E78CDB /* extentsion.swift */,
+				191D494821E5375900098065 /* PhoneFormatter.swift */,
 				1956F48E21E023770020EA02 /* DesignableButton.swift */,
 				1956F49221E275F70020EA02 /* DesignableImageView.swift */,
 				1979680021CD65BD00E78CDB /* LocationManager.swift */,
@@ -400,6 +403,7 @@
 				1900D44A21C9BE9C002A453A /* SearchCriteriaViewController.swift in Sources */,
 				196AD4E221DABD6B0006F699 /* YelpObjects.swift in Sources */,
 				196AD4D221D9D7280006F699 /* WelcomeOnboardingViewController.swift in Sources */,
+				191D494921E5375900098065 /* PhoneFormatter.swift in Sources */,
 				196AD4D421D9D73F0006F699 /* LocationOnboardingViewController.swift in Sources */,
 				197967F621CAE6BA00E78CDB /* GrubController.swift in Sources */,
 			);
