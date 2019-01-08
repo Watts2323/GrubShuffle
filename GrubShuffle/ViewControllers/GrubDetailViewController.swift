@@ -16,6 +16,8 @@ class GrubDetailViewController: UIViewController {
 //    let locationManger = CLLocationManager()
 //    let regionInMeters: Double = 10000
     
+    let Cinnabar = UIColor(red: 225/255, green: 76/255, blue: 56/255, alpha: 1)
+    
     var yelpObject: YelpObjects? {
         didSet{
             loadViewIfNeeded()
@@ -30,7 +32,7 @@ class GrubDetailViewController: UIViewController {
 //    }
     
     //MARK: OUTLETS
-
+    
     @IBOutlet weak var picImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -49,6 +51,9 @@ class GrubDetailViewController: UIViewController {
         nameLabel.text = yelpObject.name.stripped
         addressLabel.text = "\(yelpObject.location.displayAddress)".stripped
         categoriesLabel.text = yelpObject.categoriesString
+        
+        let phoneNumber = PhoneNumberFormatter.formatPhoneNumber(yelpObject.phoneNumber)
+        phoneNumberLabel.setTitle(phoneNumber, for: .normal)
     }
     
     func showImage(){
@@ -69,6 +74,7 @@ class GrubDetailViewController: UIViewController {
 //        checkLocationServices()
         updateViews()
         showImage()
+        navigationController?.navigationBar.barTintColor = Cinnabar
     }
     
     @IBAction func phoneNumberButtonTapped(_ sender: UIButton) {
@@ -85,8 +91,7 @@ class GrubDetailViewController: UIViewController {
     }
     
     @IBAction func mapButtonTapped(_ sender: UIButton) {
-        let viewController = MapkitViewController()
-        self.navigationController?.present(viewController, animated: true, completion: nil)
+        performSegue(withIdentifier: "fromDetailToMap", sender: self)
     }
     
     

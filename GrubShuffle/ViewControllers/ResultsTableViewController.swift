@@ -59,10 +59,9 @@ class ResultsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fromResultsToShuffle" {
             guard let destinationVC = segue.destination as? ShuffleResultsViewController,
-                let selectedIndex = tableView.indexPathForSelectedRow else { return }
+                let _ = tableView.indexPathForSelectedRow else { return }
             
-            let yelpGrub = YelpObjectController.shared.yelpObjects[selectedIndex.row]
-            destinationVC.yelpShuffle = [yelpGrub]
+            destinationVC.yelpShuffle = resultsArray
         }
     }
 
