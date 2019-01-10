@@ -20,12 +20,12 @@
 		1900D44821C973EB002A453A /* Grub+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D44721C973EB002A453A /* Grub+Convenience.swift */; };
 		1900D44A21C9BE9C002A453A /* SearchCriteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900D44921C9BE9C002A453A /* SearchCriteriaViewController.swift */; };
 		191D494921E5375900098065 /* PhoneFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D494821E5375900098065 /* PhoneFormatter.swift */; };
+		191D494B21E5B0BE00098065 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D494A21E5B0BE00098065 /* Constant.swift */; };
 		1956F48F21E023770020EA02 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1956F48E21E023770020EA02 /* DesignableButton.swift */; };
 		1956F49321E275F70020EA02 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1956F49221E275F70020EA02 /* DesignableImageView.swift */; };
 		1956F49521E2FD080020EA02 /* ShuffleResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1956F49421E2FD080020EA02 /* ShuffleResultsViewController.swift */; };
 		196AD4BC21D7E4DD0006F699 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4BA21D7E4DD0006F699 /* loading.json */; };
 		196AD4BD21D7E4DD0006F699 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4BB21D7E4DD0006F699 /* search.json */; };
-		196AD4BF21D7E6BD0006F699 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4BE21D7E6BD0006F699 /* LoadingScreenViewController.swift */; };
 		196AD4C121D7F3500006F699 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4C021D7F3500006F699 /* data.json */; };
 		196AD4C521D9CCEB0006F699 /* building_evolution_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4C221D9CCEA0006F699 /* building_evolution_animation.json */; };
 		196AD4C621D9CCEB0006F699 /* clap.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4C321D9CCEA0006F699 /* clap.json */; };
@@ -38,7 +38,7 @@
 		196AD4DA21D9D79E0006F699 /* LastOnboadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4D921D9D79E0006F699 /* LastOnboadingViewController.swift */; };
 		196AD4DC21D9F9070006F699 /* fireworks.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4DB21D9F9070006F699 /* fireworks.json */; };
 		196AD4E021DA83200006F699 /* Ping Pong.json in Resources */ = {isa = PBXBuildFile; fileRef = 196AD4DF21DA83200006F699 /* Ping Pong.json */; };
-		196AD4E221DABD6B0006F699 /* YelpObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4E121DABD6B0006F699 /* YelpObjects.swift */; };
+		196AD4E221DABD6B0006F699 /* YelpObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4E121DABD6B0006F699 /* YelpObject.swift */; };
 		196AD4E421DAE6460006F699 /* YelpObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4E321DAE6460006F699 /* YelpObjectController.swift */; };
 		196AD4E621DBDDE70006F699 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196AD4E521DBDDE70006F699 /* ResultsTableViewController.swift */; };
 		197967F621CAE6BA00E78CDB /* GrubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197967F521CAE6BA00E78CDB /* GrubController.swift */; };
@@ -63,12 +63,12 @@
 		1900D44721C973EB002A453A /* Grub+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grub+Convenience.swift"; sourceTree = "<group>"; };
 		1900D44921C9BE9C002A453A /* SearchCriteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCriteriaViewController.swift; sourceTree = "<group>"; };
 		191D494821E5375900098065 /* PhoneFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFormatter.swift; sourceTree = "<group>"; };
+		191D494A21E5B0BE00098065 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		1956F48E21E023770020EA02 /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		1956F49221E275F70020EA02 /* DesignableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
 		1956F49421E2FD080020EA02 /* ShuffleResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleResultsViewController.swift; sourceTree = "<group>"; };
 		196AD4BA21D7E4DD0006F699 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		196AD4BB21D7E4DD0006F699 /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
-		196AD4BE21D7E6BD0006F699 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		196AD4C021D7F3500006F699 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		196AD4C221D9CCEA0006F699 /* building_evolution_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = building_evolution_animation.json; sourceTree = "<group>"; };
 		196AD4C321D9CCEA0006F699 /* clap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clap.json; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		196AD4D921D9D79E0006F699 /* LastOnboadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOnboadingViewController.swift; sourceTree = "<group>"; };
 		196AD4DB21D9F9070006F699 /* fireworks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fireworks.json; sourceTree = "<group>"; };
 		196AD4DF21DA83200006F699 /* Ping Pong.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Ping Pong.json"; sourceTree = "<group>"; };
-		196AD4E121DABD6B0006F699 /* YelpObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpObjects.swift; sourceTree = "<group>"; };
+		196AD4E121DABD6B0006F699 /* YelpObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpObject.swift; sourceTree = "<group>"; };
 		196AD4E321DAE6460006F699 /* YelpObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpObjectController.swift; sourceTree = "<group>"; };
 		196AD4E521DBDDE70006F699 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		197967F521CAE6BA00E78CDB /* GrubController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrubController.swift; sourceTree = "<group>"; };
@@ -180,7 +180,6 @@
 			children = (
 				1900D43E21C8A8D9002A453A /* MainViewController.swift */,
 				1900D44921C9BE9C002A453A /* SearchCriteriaViewController.swift */,
-				196AD4BE21D7E6BD0006F699 /* LoadingScreenViewController.swift */,
 				196AD4E521DBDDE70006F699 /* ResultsTableViewController.swift */,
 				1956F49421E2FD080020EA02 /* ShuffleResultsViewController.swift */,
 				197967FE21CD62E600E78CDB /* GrubDetailViewController.swift */,
@@ -195,7 +194,7 @@
 				1900D42A21C852C6002A453A /* GrubShuffle.xcdatamodeld */,
 				1900D44521C969C4002A453A /* CoreDataStack.swift */,
 				1900D44721C973EB002A453A /* Grub+Convenience.swift */,
-				196AD4E121DABD6B0006F699 /* YelpObjects.swift */,
+				196AD4E121DABD6B0006F699 /* YelpObject.swift */,
 			);
 			path = "Model+CoreData";
 			sourceTree = "<group>";
@@ -205,6 +204,7 @@
 			children = (
 				1900D44021C95881002A453A /* AnimationJson */,
 				197967FA21CC414400E78CDB /* extentsion.swift */,
+				191D494A21E5B0BE00098065 /* Constant.swift */,
 				191D494821E5375900098065 /* PhoneFormatter.swift */,
 				1956F48E21E023770020EA02 /* DesignableButton.swift */,
 				1956F49221E275F70020EA02 /* DesignableImageView.swift */,
@@ -390,7 +390,6 @@
 				1900D43F21C8A8D9002A453A /* MainViewController.swift in Sources */,
 				1900D42C21C852C6002A453A /* GrubShuffle.xcdatamodeld in Sources */,
 				1900D44821C973EB002A453A /* Grub+Convenience.swift in Sources */,
-				196AD4BF21D7E6BD0006F699 /* LoadingScreenViewController.swift in Sources */,
 				196AD4D621D9D76A0006F699 /* ChoosePlaceOnboardingViewController.swift in Sources */,
 				196AD4D821D9D77C0006F699 /* ShuffleOnboardingViewController.swift in Sources */,
 				1900D42421C852C6002A453A /* AppDelegate.swift in Sources */,
@@ -399,9 +398,10 @@
 				196AD4E621DBDDE70006F699 /* ResultsTableViewController.swift in Sources */,
 				197967FF21CD62E600E78CDB /* GrubDetailViewController.swift in Sources */,
 				1900D44621C969C4002A453A /* CoreDataStack.swift in Sources */,
+				191D494B21E5B0BE00098065 /* Constant.swift in Sources */,
 				196AD4E421DAE6460006F699 /* YelpObjectController.swift in Sources */,
 				1900D44A21C9BE9C002A453A /* SearchCriteriaViewController.swift in Sources */,
-				196AD4E221DABD6B0006F699 /* YelpObjects.swift in Sources */,
+				196AD4E221DABD6B0006F699 /* YelpObject.swift in Sources */,
 				196AD4D221D9D7280006F699 /* WelcomeOnboardingViewController.swift in Sources */,
 				191D494921E5375900098065 /* PhoneFormatter.swift in Sources */,
 				196AD4D421D9D73F0006F699 /* LocationOnboardingViewController.swift in Sources */,
@@ -562,7 +562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = COM.Xavierwatts.GrubShuffle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -581,7 +581,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = COM.Xavierwatts.GrubShuffle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

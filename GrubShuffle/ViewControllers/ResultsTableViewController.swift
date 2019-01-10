@@ -10,21 +10,26 @@ import UIKit
 
 class ResultsTableViewController: UITableViewController {
     
-    var yelpGrubObjects: [YelpObjects] = []
+    var yelpGrubObjects: [YelpObject] = []
 //    var address: [Location] = []
     
-    var resultsArray: [YelpObjects] = []
+    var resultsArray: [YelpObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        navigationItem.leftBarButtonItem.colo
     }
     
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        navigationController?.dismiss(animated: true, completion: nil)
+    }
     
 
     @IBAction func NextButtonTapped(_ sender: Any) {
         print("Next Button Tapped")
     }
-    
+     
 
     // MARK: - Table view data source
 
@@ -57,9 +62,10 @@ class ResultsTableViewController: UITableViewController {
 
 //     MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
         if segue.identifier == "fromResultsToShuffle" {
-            guard let destinationVC = segue.destination as? ShuffleResultsViewController,
-                let _ = tableView.indexPathForSelectedRow else { return }
+            guard let destinationVC = segue.destination as? ShuffleResultsViewController
+                else { return }
             
             destinationVC.yelpShuffle = resultsArray
         }

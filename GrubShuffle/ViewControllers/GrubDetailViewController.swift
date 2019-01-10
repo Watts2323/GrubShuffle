@@ -12,24 +12,18 @@ import UIKit
 
 class GrubDetailViewController: UIViewController {
     
-//    //Variables:
-//    let locationManger = CLLocationManager()
-//    let regionInMeters: Double = 10000
-    
-    let Cinnabar = UIColor(red: 225/255, green: 76/255, blue: 56/255, alpha: 1)
-    
-    var yelpObject: YelpObjects? {
+    var yelpObject: YelpObject? {
         didSet{
             loadViewIfNeeded()
             updateViews()
         }
     }
     
-//    var grub: Grub? {
-//        didSet{
-//            showImage()
-//        }
-//    }
+    //    var grub: Grub? {
+    //        didSet{
+    //            showImage()
+    //        }
+    //    }
     
     //MARK: OUTLETS
     
@@ -58,9 +52,6 @@ class GrubDetailViewController: UIViewController {
     
     func showImage(){
         guard let yelpImageObject = yelpObject else { return }
-        guard let imageURLAsString = yelpImageObject.imageURLAsString,
-            let imageURL = URL(string: imageURLAsString),
-            let _ = try? Data(contentsOf: imageURL)  else { return }
         picImageView.layer.cornerRadius = picImageView.layer.frame.height / 2
         YelpObjectController.shared.getYelpImage(for: yelpImageObject ) { (image) in
             DispatchQueue.main.async {
@@ -71,15 +62,15 @@ class GrubDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        checkLocationServices()
+        //        checkLocationServices()
         updateViews()
         showImage()
-        navigationController?.navigationBar.barTintColor = Cinnabar
+                  navigationController?.navigationBar.barTintColor = Cinnabar
     }
     
     @IBAction func phoneNumberButtonTapped(_ sender: UIButton) {
         guard let yelpObject = yelpObject else { return }
-            let phoneNumber = yelpObject.phoneNumber
+        let phoneNumber = yelpObject.phoneNumber
         
         if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url){
             if #available(iOS 10, *) {
@@ -94,50 +85,10 @@ class GrubDetailViewController: UIViewController {
         performSegue(withIdentifier: "fromDetailToMap", sender: self)
     }
     
-    
-    
-//    func setUpLocationManager(){
-//        locationManger.delegate = self as? CLLocationManagerDelegate
-//        locationManger.desiredAccuracy = kCLLocationAccuracyBest
-//    }
-    
-//    func checkLocationServices() {
-//        if CLLocationManager.locationServicesEnabled(){
-//            setUpLocationManager()
-//            checkLocationAuthorization()
-//        }else{
-//            //Alert goes here explaing why we need their location
-//        }
-//    }
-    
-//    func centerViewOnUsersLocation() {
-//        if let location = locationManger.location?.coordinate{
-//            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-//            mapkitView.setRegion(region, animated: true)
-//        }
-//    }
-//    
-//    func checkLocationAuthorization() {
-//        switch CLLocationManager.authorizationStatus() {
-//        //just means only use their loaction when they are using the app
-//        case .authorizedWhenInUse:
-//            mapkitView.showsUserLocation = true
-//            centerViewOnUsersLocation()
-//            //Line 67 fires off the didUpdate Function in the location Manager File
-//            locationManger.startUpdatingLocation()
-//        //They denied permisson so the only way they we can get their location is if they go to settings and allow us to.
-//        case .denied:
-//            break
-//        //Request permission
-//        case .notDetermined:
-//            locationManger.requestWhenInUseAuthorization()
-//        //Always use their location even when they don't have the app open
-//        case .authorizedAlways:
-//            break
-//        //Parentol control stuff
-//        case .restricted:
-//            //show an alert telling them it's been restricted
-//            break
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fromDetailToMap" {
+            guard let destinationVC = segue.destination as? MapkitViewController else { return }
+            destinationVC.yelpObject = yelpObject
+        }
+    }
 }

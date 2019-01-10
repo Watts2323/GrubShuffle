@@ -15,7 +15,7 @@ class YelpObjectController {
     
     static let shared = YelpObjectController()
     
-    var yelpObjects: [YelpObjects] = []
+    var yelpObjects: [YelpObject] = []
     
     
     func fetchYelpObject(searchTerm: String, latitude: Double, longitude: Double, radius: Int, completion: @escaping (Bool) -> Void) {
@@ -61,7 +61,7 @@ class YelpObjectController {
             }.resume()
     }
     
-    func getYelpImage(for yelpObject: YelpObjects, completion: @escaping (UIImage?) -> Void){
+    func getYelpImage(for yelpObject: YelpObject, completion: @escaping (UIImage?) -> Void){
         
         guard let imageURLAsString = yelpObject.imageURLAsString else { return }
         //construct URL

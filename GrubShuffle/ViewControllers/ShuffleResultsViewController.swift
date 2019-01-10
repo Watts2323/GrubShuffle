@@ -15,11 +15,11 @@ class ShuffleResultsViewController: UIViewController {
     @IBOutlet weak var shuffleButton: UIButton!
     
     
-    var yelpShuffle: [YelpObjects] = []
+    var yelpShuffle: [YelpObject] = []
     
     var pickerIndexes: [Int] = []
     
-    var selectedYelpObject: YelpObjects?
+    var selectedYelpObject: YelpObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,17 +32,30 @@ class ShuffleResultsViewController: UIViewController {
         let index = shufflePickerView.selectedRow(inComponent: 0)
         let yelpObject = yelpShuffle[index]
         selectedYelpObject = yelpObject
+        
+        navigationController?.navigationBar.barTintColor = Mustard
     }
 
     func prepareShuffle() {
         for index in 0...100 {
-            let pickerIndex = index % yelpShuffle.count
+            let pickerIndex = index % yelpShuffle.count 
+            print(index)
+            print(pickerIndex)
             pickerIndexes.append(pickerIndex)
         }
+        print("break")
+    }
+    
+    @IBAction func viewDetailsButtonHit(_ sender: UIButton) {
+        
     }
     
     
-    
+    @IBAction func viewDetail(_ sender: Any) {
+        guard let grubDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "grubDetailVC") as? GrubDetailViewController else { return }
+        grubDetailVC.yelpObject = selectedYelpObject
+        navigationController?.pushViewController(grubDetailVC, animated: true)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fromShuffleToDetailVC" {
@@ -55,6 +68,7 @@ class ShuffleResultsViewController: UIViewController {
     
     
     @IBAction func ShuffleButtonTapped(_ sender: UIButton) {
+        
         
         UIView.animate(withDuration: 1) {
             self.viewDetailsButton.alpha = 0
@@ -72,6 +86,7 @@ class ShuffleResultsViewController: UIViewController {
         shufflePickerView.selectRow(randomIndex, inComponent: 0, animated: true)
         shufflePickerView.showsSelectionIndicator = true
         selectedYelpObject = shuffledSelection
+        let loadingView = startLoadingView()
         UIView.animate(withDuration: 20, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             //Increase button
 //            self.shuffleButton.bounds.size.width += 10
@@ -83,22 +98,13 @@ class ShuffleResultsViewController: UIViewController {
                 print("Shuffle button tapped")
             }, completion: nil)
         }
+        self.stop(loadingView)
         
         viewDetailsButton.isHidden = false
         UIView.animate(withDuration: 1) {
             self.viewDetailsButton.alpha = 1
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension ShuffleResultsViewController: UIPickerViewDelegate, UIPickerViewDataSource {

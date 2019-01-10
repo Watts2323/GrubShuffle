@@ -9,11 +9,11 @@
 import Foundation
 
 struct TopLevelJSON: Decodable {
-    var businesses: [YelpObjects]
+    var businesses: [YelpObject]
 }
 
-struct YelpObjects: Decodable, Equatable {
-    static func == (lhs: YelpObjects, rhs: YelpObjects) -> Bool {
+struct YelpObject: Decodable, Equatable {
+    static func == (lhs: YelpObject, rhs: YelpObject) -> Bool {
         return lhs.name == rhs.name
     }
     
