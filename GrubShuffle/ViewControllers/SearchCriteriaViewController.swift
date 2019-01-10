@@ -29,9 +29,9 @@ class SearchCriteriaViewController: UIViewController {
     
     //Variables
     var isOpen: Bool?
-//    var locationBoss = CLLocationManager()
-//    var currentLatitude: Double?
-//    var currentLongitude: Double?
+    //    var locationBoss = CLLocationManager()
+    //    var currentLatitude: Double?
+    //    var currentLongitude: Double?
     var price: String = "25.0"
     var searchText: String?
     var radiusNumCounter = 1
@@ -39,15 +39,15 @@ class SearchCriteriaViewController: UIViewController {
     var latitude: Double?
     var longitude: Double?
     
-//    private func resetSearch() {
-//        price = nil
-//        searchText = nil
-//        radiusNumCounter = nil
-//        isOpen = nil
-//        keywordsTextField.text = ""
-//        keywordsTextField.placeholder = "eg: Pizza, Burgers, Chicken"
-////        locationBoss.stopUpdatingLocation()
-//    }
+    private func resetSearch() {
+        //        var price = nil
+        searchText = nil
+        //        radiusNumCounter = nil
+        isOpen = nil
+        keywordsTextField.text = ""
+        keywordsTextField.placeholder = "eg: Pizza, Burgers, Chicken"
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +58,18 @@ class SearchCriteriaViewController: UIViewController {
         locationManager.startLocationUpdates()
         setupTextField()
         setUpContraints()
+        
+        //        firstDollarSignLabel.textColor = UIColor.green
+        radiusLabel.textColor = .black
+        
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resetSearch()
+        viewDidLayoutSubviews()
+        reloadInputViews()
     }
     
     
@@ -78,28 +90,28 @@ class SearchCriteriaViewController: UIViewController {
         
         
         //Spacing inbetween the dollar saign labels
-        firstDollarSignLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
-//
-//        firstDollarSignLabel.trailingAnchor.constraint(equalTo: secondDollarSignLabel.leadingAnchor, constant: 25).isActive = true
-//
-        secondDollarSignLabel.trailingAnchor.constraint(equalTo: thirdDollarSignLabel.leadingAnchor, constant: -128).isActive = true
-
-//        secondDollarSignLabel.leadingAnchor.constraint(equalTo: firstDollarSignLabel.trailingAnchor, constant: 25).isActive = true
-//
-        thirdDollarSignLabel.trailingAnchor.constraint(equalTo: lastDollarSignLabel.leadingAnchor, constant: -35).isActive = true
-
+        firstDollarSignLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 33).isActive = true
+        //
+        //        firstDollarSignLabel.trailingAnchor.constraint(equalTo: secondDollarSignLabel.leadingAnchor, constant: 25).isActive = true
+        //
+        secondDollarSignLabel.trailingAnchor.constraint(equalTo: thirdDollarSignLabel.leadingAnchor, constant: -86).isActive = true
+        
+        //        secondDollarSignLabel.leadingAnchor.constraint(equalTo: firstDollarSignLabel.trailingAnchor, constant: 25).isActive = true
+        //
+        thirdDollarSignLabel.trailingAnchor.constraint(equalTo: lastDollarSignLabel.leadingAnchor, constant: -59).isActive = true
+        
         lastDollarSignLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
     }
     
     
     
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-////        resetSearch()
-//        viewDidLayoutSubviews()
-//        reloadInputViews()
-//    }
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        super.viewWillAppear(animated)
+    ////        resetSearch()
+    //        viewDidLayoutSubviews()
+    //        reloadInputViews()
+    //    }
     
     
     @IBAction func openNowSwitchValueChanged(_ sender: UISwitch) {
@@ -108,11 +120,11 @@ class SearchCriteriaViewController: UIViewController {
     }
     
     func updateResults(completion: @escaping (Bool) -> Void){
-        print("break")
+        
         guard let searchText = keywordsTextField.text,
             let currentLatitude = latitude,
             let currentLongitude = longitude
-            else { return }
+            else { completion(false) ; return }
         YelpObjectController.shared.fetchYelpObject(searchTerm: searchText, latitude: currentLatitude, longitude: currentLongitude, radius: radiusNumCounter) { (success) in
             if success {
                 DispatchQueue.main.async {
@@ -123,15 +135,32 @@ class SearchCriteriaViewController: UIViewController {
     }
     
     //MARK; - Actions
+    
+    
     @IBAction func searchButtonTapped(_ sender: UIButton) {
+        
+        let loadingView = startLoadingView()
+        
         updateResults { (success) in
-            if success == true {
+            if success {
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "fromSearchToResults", sender: nil)
                 }
+            } else {
+                let status = CLLocationManager.authorizationStatus()
+                if ((self.latitude == nil || self.longitude == nil)) {
+                    if status != .authorizedWhenInUse && status != .authorizedAlways {
+                        self.presentLocationAlert(title: "We can't find any Grub near you!", message: "Please go to settings and enable locations services.", enableSettingsLink: true)
+                    } else if status == .denied {
+                        self.presentLocationAlert(title: "We can't find any Grub near you!", message: "Please allow us to use your location.", enableSettingsLink: false)
+                    } else {
+                        self.presentLocationAlert(title: "We can't find any Grub near you!", message: "Please try again.", enableSettingsLink: false)
+                    }
+                }
             }
+            self.stop(loadingView)
         }
-      print("tapped")
+        print("tapped")
     }
     
     @IBAction func priceSliderAction(_ sender: UISlider) {
@@ -141,20 +170,59 @@ class SearchCriteriaViewController: UIViewController {
         switch fixed {
         case 25.0:
             price = "1"
+            firstDollarSignLabel.textColor = UIColor.green
+            //            priceLabel.textColor = Almond
+            secondDollarSignLabel.textColor = UIColor.black
+            thirdDollarSignLabel.textColor = UIColor.black
+            lastDollarSignLabel.textColor = UIColor.black
         case 50.0:
             price = "2"
+            firstDollarSignLabel.textColor = UIColor.black
+            //            priceLabel.textColor = .green
+            secondDollarSignLabel.textColor = UIColor.green
+            //             priceLabel.textColor = .green
+            thirdDollarSignLabel.textColor = UIColor.black
+            //             priceLabel.textColor = .green
+            lastDollarSignLabel.textColor = UIColor.black
+        //             priceLabel.textColor = .green
         case 75.0:
             price = "3"
+            firstDollarSignLabel.textColor = UIColor.black
+            secondDollarSignLabel.textColor = UIColor.black
+            //            priceLabel.textColor = .purple
+            thirdDollarSignLabel.textColor = UIColor.green
+            //            priceLabel.textColor = .green
+            lastDollarSignLabel.textColor = UIColor.black
+            //             priceLabel.textColor = Mustard
+            
         case 100.0:
             price = "4"
+            //            priceLabel.textColor = .white
+            firstDollarSignLabel.textColor = UIColor.black
+            secondDollarSignLabel.textColor = UIColor.black
+            thirdDollarSignLabel.textColor = UIColor.black
+            //             priceLabel.textColor = .purple
+            lastDollarSignLabel.textColor = UIColor.green
+            //            priceLabel.textColor = Cinnabar
+            
         default:
             price = "0"
+        }
+    }
+    
+    func changeRadiusLabelColor() {
+        if radiusSlider.value != 1 {
+            radiusLabel.textColor = Cinnabar
+        }else {
+            radiusLabel.textColor = .black
         }
     }
     
     @IBAction func radiusSliderAction(_ sender: UISlider) {
         radiusNumberLabel.text = String(Int(sender.value))
         radiusNumCounter = Int(sender.value)
+        //        radiusLabel.textColor = .blue
+        changeRadiusLabelColor()
     }
     
     

@@ -24,6 +24,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate {
     func startLocationUpdates() {
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+//        locationManager.stopUpdatingLocation()
         
     }
     
